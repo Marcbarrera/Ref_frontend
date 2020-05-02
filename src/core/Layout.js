@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Header from '../Header';
-import ModalSignin from '../ModalSignin'
+import ModalSignin from '../ModalSignin';
+import ModalSignup from '../ModalSignup';
 
 //important importar link per a que la pagina nomes recarregui allò que canvia. Sinó actualitza tota la pàgina.
 
@@ -14,19 +15,22 @@ const Layout = ({children}) => {
                 </Link>
             </li>
             <li className="nav-item">
+                <Link to="/signin" className="text-light nav-link">
+                    Signin
+                </Link>
+            </li>
+            <li className="nav-item">
                 <Link to="/signup" className="text-light nav-link">
                     Signup
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link to="/caca" className="text-light nav-link">
-                    Caca
-                </Link>
+            <li>
+            <ModalSignin>Signin</ModalSignin>
             </li>
             <li>
-            <ModalSignin></ModalSignin>
-   
+            <ModalSignup>Signup</ModalSignup>
             </li>
+            
         </ul>
     )
     return (
