@@ -11,17 +11,17 @@ const nav = () => (
             </Link>
         </li>
         <li className="nav-item">
-            <Link to="/categories" className="nav-link" style={ { color: '#fff' }} >
+            <Link to="/newestposts" className="nav-link" style={ { color: '#fff' }} >
                 Newest Posts
             </Link>
         </li>
         <li className="nav-item">
-            <Link to="/categories" className="nav-link" style={ { color: '#fff' }} >
+            <Link to="/bestposts" className="nav-link" style={ { color: '#fff' }} >
                 Best Posts
             </Link>
         </li>
         <li className="nav-item">
-            <Link to="/signin" className="nav-link" style={ { color: '#fff' }}>
+            <Link to="/signinwrite" className="nav-link" style={ { color: '#fff' }}>
                 write a post
             </Link>
         </li>

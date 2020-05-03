@@ -6,7 +6,7 @@ import {authenticate, isAuth } from './Helpers';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const Signin = ({history}) => {
+const SigninWrite = ({history}) => {
     const [values, setValues] =useState({
         email:'',
         password:'',
@@ -36,7 +36,7 @@ const Signin = ({history}) => {
             authenticate(response, () => {
                 setValues({...values, name:'', email:'', password:'', buttonText: 'Submitted'})
                 // toast.success(`Hola ${response.data.user.name}, Welcome back! :)`)
-                isAuth() && isAuth().role === 'admin' ? history.push('/admin') : history.push('/private');
+                isAuth() && isAuth().role === 'admin' ? history.push('/admin') : history.push('/writeapost');
 
             });
         })
@@ -73,7 +73,7 @@ const Signin = ({history}) => {
             <div className="col-md-6 offset-md-3">
             <ToastContainer/>
             {isAuth()? <Redirect to="/" /> : null}
-            <h1 className="p-5 text-center">Signin</h1>
+            <h2 className="p-5 text-center">To write a post please Signin</h2>
             {signinForm()}
             </div>
         </Layout>
@@ -81,4 +81,4 @@ const Signin = ({history}) => {
   )
 };
 
-export default Signin; 
+export default SigninWrite; 
