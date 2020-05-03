@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Children} from 'react';
 import Modal from 'react-modal';
 import '../src/auth/SignupModal.css';
 import SignupModalContent from './auth/SignupModalContent';
@@ -11,8 +11,8 @@ function ModalSignup () {
   return(
     <div className='App'>
       <button onClick={()=>setModalIsOpen(true)}>Signup</button>
-          <Modal className="hola" isOpen={modalIsOpen} onRequestClose={()=> setModalIsOpen(false)}>
-            <SignupModalContent></SignupModalContent>
+          <Modal  className="hola" isOpen={modalIsOpen} onRequestClose={()=> setModalIsOpen(false)}>
+            <SignupModalContent ></SignupModalContent>
             <div>
               <button className='modal-close-button' onClick={()=> setModalIsOpen (false)}>close</button>
             </div>

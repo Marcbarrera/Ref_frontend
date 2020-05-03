@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import Layout from '../core/Layout';
 import axios from 'axios';
+import {authenticate, isAuth } from './Helpers';
+
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -10,9 +12,10 @@ const Signup = () => {
         name:"",
         email:'',
         password:'',
-        buttonText:'Submit'
-
+        buttonText:'Submit',
     });
+    
+    
 
     const {name, email, password, buttonText} = values;
 
@@ -57,25 +60,29 @@ const Signup = () => {
             </div>
  
             <div>
-                <button className="btn btn-primary" onClick={clickSubmit}>
+                <button className="btn btn-primary" onClick={clickSubmit} >
+    
                     {buttonText}
                 </button>
             </div>
         </form>
-
     )
+    
 
 
    return ( 
         <Layout>
             <div className="col-md-6 offset-md-3">
             <ToastContainer/>
+            {/* {JSON.stringify({name, email, password})} */}
             <h1 className="p-5 text-center">Signup</h1>
             {signupForm()}
+            {isAuth()? <Redirect to="/" /> : null}
+
             </div>
         </Layout>
 
   )
-};
+   };
 
 export default Signup;

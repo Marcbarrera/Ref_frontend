@@ -3,6 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import Layout from '../core/Layout';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
+import {authenticate, isAuth } from './Helpers';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -54,6 +55,8 @@ const Activate = ({match}) => {
         <Layout>
             <div className="col-md-6 offset-md-3">
             <ToastContainer/>
+            {isAuth()?  <Redirect to="/signin" /> :null}
+
             {activationLink()}
             </div>
         </Layout>

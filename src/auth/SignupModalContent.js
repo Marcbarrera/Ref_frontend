@@ -33,7 +33,8 @@ const SignupModalContent = () => {
             console.log('SIGNUP SUCCES', response)
             setValues({...values, name:'', email:'', password:'', buttonText: 'Submitted'})
             toast.success(response.data.message)
-        })
+
+})
         .catch(error => {
             console.log('SIGNUP ERROR, error.response.data')
             setValues({...values,buttonText: 'Submit'});
@@ -57,7 +58,7 @@ const SignupModalContent = () => {
             </div>
  
             <div>
-                <button className="btn btn-primary" onClick={clickSubmit}>
+                <button className="btn btn-primary" onClick={clickSubmit} onClick={clickSubmit}>
                     {buttonText}
                 </button>
             </div>
@@ -71,6 +72,8 @@ const SignupModalContent = () => {
             <ToastContainer/>
             <h1 className="p-5 text-center">Signup</h1>
             {signupForm()}
+            
+            }
         </>
 
   )
